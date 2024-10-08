@@ -4,7 +4,7 @@
 <div class="mt-5">
     <h4>Zadania:</h4>
     <ul class="list-group">
-        <li class="list-group-item" *ngFor="let todo of todos; let i = index">
+        <li class="list-group-item" *ngFor="let todo of todos; index as i">
             <span class="todo-item">{{i + 1}}.{{todo}}</span>
         </li>
     </ul>
