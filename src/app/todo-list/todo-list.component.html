@@ -2,6 +2,7 @@
 <input type="text" #name class="form-control" name="todo">
 <button type="button" class="btn btn-primary mt-3" (click)="addTodo(name.value)">Dodaj zadanie</button>
 
+
 <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert" *ngIf="errorMessage">
     {{ errorMessage }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="clearErrorMessage()"></button>
@@ -18,7 +19,7 @@
         [checked]="todo.isComplete"
         (change)="changeToDoStatus(todo)"
         >
-            <span class="todo-item">{{i + 1}}.{{todo.name}}</span>
+            <span class="todo-item" [ngClass]="{'text-decoration-line-through': todo.isComplete}" >{{i + 1}}.{{todo.name}}</span>
         </li>
     </ul>
     <h5 *ngIf="todos.length === 0">Aktualnie brak zadań</h5>
