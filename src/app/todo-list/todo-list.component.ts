@@ -19,10 +19,7 @@ export class TodoListComponent {
     console.log('Aktualna lista todo: ', this.todos)
   }
 
-  changeToDoStatus(todo: Todo) {
-      todo.isComplete=!todo.isComplete
-    }
-
+ 
     clearErrorMessage() {
       this.errorMessage = '';
       }
