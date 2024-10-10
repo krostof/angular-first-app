@@ -8,5 +8,8 @@
         <button type="button" class="btn btn-danger btn-sm mx-2" (click)="toggleModal()">Usuń</button>
     </li>
     <app-modal *ngIf="openModal" (close)="toggleModal()" [title]="'Czy na pewno chcesz usunąc zadanie ' + (i + 1) + '?'">
-        <button class="btn btn-danger btn-sm mx-2"></button>
+        <div class="d-flex justify-content-end">
+        <button class="btn btn-danger btn-sm mx-2">Usuń</button>
+        <button class="btn btn-info btn-sm">Anuluj</button>
+    </div>
     </app-modal>
