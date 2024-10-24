@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { TodoComponent } from './todo-list/todo/todo.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import localePL from '@angular/common/locales/pl';
 import {registerLocaleData} from "@angular/common";
+import { FirstLetterUppercasePipe } from './shared/pipes/first-letter-uppercase.pipe';
 
 registerLocaleData(localePL)
 
@@ -24,13 +25,16 @@ registerLocaleData(localePL)
     AlertComponent,
     AddTodoFormComponent,
     TodoComponent,
-    ModalComponent
+    ModalComponent,
+    FirstLetterUppercasePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'pl'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
