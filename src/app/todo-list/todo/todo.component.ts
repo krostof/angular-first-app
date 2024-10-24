@@ -15,6 +15,7 @@ export class TodoComponent {
   openModal = false;
 
   changeToDoStatus(todo: Todo) {
+    localStorage.setItem('todos', JSON.stringify(this.todo));
     todo.isComplete=!todo.isComplete
   }
 
