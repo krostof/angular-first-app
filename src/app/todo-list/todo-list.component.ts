@@ -18,8 +18,6 @@ export class TodoListComponent {
     this.todos.push({name: todo, isComplete: false})
     console.log('Aktualna lista todo: ', this.todos)
   }
-
- 
     clearErrorMessage() {
       this.errorMessage = '';
       }
@@ -27,5 +25,4 @@ export class TodoListComponent {
       deleteTodo(i: number) {
         this.todos = this.todos.filter((todo,index)=>index!=i)
         }
-
 }
