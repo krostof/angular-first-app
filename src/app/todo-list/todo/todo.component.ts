@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { Todo } from '../../shared/interfaces/todo.interfaces';
 
 @Component({
@@ -7,17 +7,12 @@ import { Todo } from '../../shared/interfaces/todo.interfaces';
   styleUrl: './todo.component.css'
 })
 
-// implements OnChanges
 export class TodoComponent {
   @Input() todo!: Todo;
   @Input() i!: number;
   @Output() delete = new EventEmitter<void>();
+  @Output() changeStatus = new EventEmitter<number>();
   openModal = false;
-
-  changeToDoStatus(todo: Todo) {
-    localStorage.setItem('todos', JSON.stringify(this.todo));
-    todo.isComplete=!todo.isComplete
-  }
 
   toggleModal(): void{
     this.openModal=!this.openModal
@@ -27,8 +22,7 @@ export class TodoComponent {
     this.delete.emit();
   }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  // console.log(changes);
-  // }
-
+  changeToDoStatus() {
+    this.changeStatus.emit(this.i);
+  }
 }
