@@ -13,6 +13,7 @@ import { ModalComponent } from './shared/components/modal/modal.component';
 import localePL from '@angular/common/locales/pl';
 import {registerLocaleData} from "@angular/common";
 import { FirstLetterUppercasePipe } from './shared/pipes/first-letter-uppercase.pipe';
+import {FormsModule} from "@angular/forms";
 
 registerLocaleData(localePL)
 
@@ -30,7 +31,7 @@ registerLocaleData(localePL)
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pl'}
