@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +7,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
       &copy; Prawa zastrzeżone
     </p>
   `,
-  styleUrl: './footer.component.css',
-  encapsulation: ViewEncapsulation.Emulated
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
 

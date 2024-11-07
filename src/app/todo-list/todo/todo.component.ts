@@ -1,28 +1,64 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import { Todo } from '../../shared/interfaces/todo.interfaces';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import {Todo} from "../../shared/interfaces/todo.interfaces";
+
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrl: './todo.component.css'
+  styleUrls: ['./todo.component.css']
 })
-
-export class TodoComponent {
+// implements OnChanges
+// implements OnInit
+export class TodoComponent{
   @Input() todo!: Todo;
   @Input() i!: number;
   @Output() delete = new EventEmitter<void>();
   @Output() changeStatus = new EventEmitter<number>();
+  // @ViewChild('li') li!: ElementRef;
   openModal = false;
 
-  toggleModal(): void{
-    this.openModal=!this.openModal
+
+// constructor() {
+//   console.log(this.todo)
+// }
+
+// ngOnInit(): void {
+//   this.timeout = setTimeout(() => {
+//     console.log('setTImeout')
+//   }, 3000)
+// }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log(changes)
+  // }
+  //
+  //  ngDoCheck(): void {
+  //    console.log('ngDoCheck został wykonany!')
+  //  }
+
+  // ngAfterViewInit(): void {
+  //   console.log(this.li)
+  // }
+
+  // ngOnDestroy(): void {
+  //   console.log('test')
+  //   clearTimeout(this.timeout);
+  // }
+
+  changeTodoStatus() {
+    this.changeStatus.emit(this.i);
+  }
+
+  toggleModal(): void {
+    this.openModal = !this.openModal;
   }
 
   deleteTodo() {
     this.delete.emit();
-  }
-
-  changeToDoStatus() {
-    this.changeStatus.emit(this.i);
   }
 }
