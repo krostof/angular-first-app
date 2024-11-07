@@ -1,24 +1,20 @@
-import {LOCALE_ID, NgModule} from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { FooterComponent } from './footer/footer.component';
-import { AlertComponent } from './shared/components/alert/alert.component';
-import { AddTodoFormComponent } from './todo-list/add-todo-form/add-todo-form.component';
-import { TodoComponent } from './todo-list/todo/todo.component';
-import { ModalComponent } from './shared/components/modal/modal.component';
-import localePL from '@angular/common/locales/pl';
-import {registerLocaleData} from "@angular/common";
-import { FirstLetterUppercasePipe } from './shared/pipes/first-letter-uppercase.pipe';
+import {LOCALE_ID, NgModule} from "@angular/core";
+import {AppComponent} from "./app.component";
+import {HeaderComponent} from "./header/header.component";
+import {TodoListComponent} from "./todo-list/todo-list.component";
+import {FooterComponent} from "./footer/footer.component";
+import {AlertComponent} from "./shared/components/alert/alert.component";
+import {AddTodoFormComponent} from "./todo-list/add-todo-form/add-todo-form.component";
+import {TodoComponent} from "./todo-list/todo/todo.component";
+import {ModalComponent} from "./shared/components/modal/modal.component";
+import {FirstLetterUppercasePipe} from "./shared/pipes/first-letter-uppercase.pipe";
+import {HomeComponent} from "./home/home.component";
+import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
-import { HomeComponent } from './home/home.component';
-
-registerLocaleData(localePL)
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -33,11 +29,11 @@ registerLocaleData(localePL)
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pl'}
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule { }
