@@ -14,6 +14,7 @@ import localePL from '@angular/common/locales/pl';
 import {registerLocaleData} from "@angular/common";
 import { FirstLetterUppercasePipe } from './shared/pipes/first-letter-uppercase.pipe';
 import {FormsModule} from "@angular/forms";
+import { HomeComponent } from './home/home.component';
 
 registerLocaleData(localePL)
 
@@ -27,7 +28,8 @@ registerLocaleData(localePL)
     AddTodoFormComponent,
     TodoComponent,
     ModalComponent,
-    FirstLetterUppercasePipe
+    FirstLetterUppercasePipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
