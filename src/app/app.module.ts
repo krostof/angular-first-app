@@ -12,6 +12,7 @@ import {FirstLetterUppercasePipe} from "./shared/pipes/first-letter-uppercase.pi
 import {HomeComponent} from "./home/home.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -25,7 +26,8 @@ import {FormsModule} from "@angular/forms";
     TodoComponent,
     ModalComponent,
     FirstLetterUppercasePipe,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
