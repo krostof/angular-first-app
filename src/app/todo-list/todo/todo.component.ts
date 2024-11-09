@@ -5,6 +5,8 @@ import {
   Output,
 } from '@angular/core';
 import {Todo} from "../../shared/interfaces/todo.interfaces";
+import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
+import {TodoService} from "../../core/services/todo.service";
 
 
 @Component({
@@ -23,9 +25,9 @@ export class TodoComponent{
   openModal = false;
 
 
-// constructor() {
-//   console.log(this.todo)
-// }
+constructor(private router: Router, private route: ActivatedRoute) {
+
+}
 
 // ngOnInit(): void {
 //   this.timeout = setTimeout(() => {
@@ -60,5 +62,14 @@ export class TodoComponent{
 
   deleteTodo() {
     this.delete.emit();
+  }
+
+  navigateToDetails() {
+  const navigationExtras: NavigationExtras = {
+    relativeTo: this.route,
+    state: {example: 'test'}
+    // queryParams: {id: this.i,test: 'wartosc'}
+  }
+    this.router.navigate([this.i],navigationExtras);
   }
 }

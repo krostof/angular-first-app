@@ -13,6 +13,9 @@ import {HomeComponent} from "./home/home.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TodoDetailsComponent } from './todo-details/todo-details.component';
+import { ChildAComponent } from './todo-list/child-a/child-a.component';
+import { ChildBComponent } from './todo-list/child-b/child-b.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -27,7 +30,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ModalComponent,
     FirstLetterUppercasePipe,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TodoDetailsComponent,
+    ChildAComponent,
+    ChildBComponent
   ],
   imports: [
     BrowserModule,

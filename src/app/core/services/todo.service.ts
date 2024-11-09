@@ -31,4 +31,8 @@ export class TodoService {
     localStorage.setItem('todos',JSON.stringify(this.todos));
   }
 
+  getTodo(index: number):Todo | undefined {
+    return this.todos[index];
+  }
+
 }
