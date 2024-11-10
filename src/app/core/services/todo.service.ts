@@ -5,7 +5,8 @@ import {Todo} from "../../shared/interfaces/todo.interfaces";
   providedIn: 'root'
 })
 export class TodoService {
-  private _todos: Todo[] = JSON.parse(localStorage.getItem('todos') ?? '');
+  private _todos: Todo[] = [];
+  // private _todos: Todo[] = JSON.parse(localStorage.getItem('todos') ?? '');
   constructor() { }
 
   public get todos(){
@@ -13,7 +14,7 @@ export class TodoService {
   }
 
   addTodo(name: string): void {
-    this._todos.push({name: name, isComplete: false});
+    // this._todos.push({name: name, isComplete: false});
     this.saveToLocalStorage();
   }
 
